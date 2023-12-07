@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/sura_content.dart';
 import 'package:islami/sura_model.dart';
-
 class quranTab extends StatelessWidget {
 
   List<String>suraName = [
@@ -107,8 +106,7 @@ class quranTab extends StatelessWidget {
     "الشمس",
     "الليل",
     "الضحى",
-    "الشرح"
-    ,
+    "الشرح",
     "التين",
     "العلق",
     "القدر",
@@ -140,9 +138,11 @@ class quranTab extends StatelessWidget {
           color: Theme
               .of(context)
               .primaryColor,),
-        Text('sura name', style: GoogleFonts.elMessiri(
-            fontSize: 25, fontWeight: FontWeight.w500
-        ),),
+        Text(
+            AppLocalizations.of(context)!.quran,
+            style: GoogleFonts.elMessiri(
+                fontSize: 25, fontWeight: FontWeight.w500),
+          ),
         Divider(thickness: 2,
           color: Theme
               .of(context)
