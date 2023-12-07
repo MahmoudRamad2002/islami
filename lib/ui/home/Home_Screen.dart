@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/mythem.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/ui/tabs/hads_tab.dart';
 import 'package:islami/ui/tabs/quran_tab.dart';
 import 'package:islami/ui/tabs/radio_tab.dart';
@@ -37,38 +37,29 @@ class _HomeScreenState extends State<HomeScreen> {
               items: [
                 BottomNavigationBarItem(
                     icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
-                    label: "Quran",
-                    backgroundColor: Theme
-                        .of(context)
-                        .primaryColor),
-                BottomNavigationBarItem(icon: ImageIcon(
-                    AssetImage("assets/images/icon_hadeth.png")),
-                    label: "Ahadeth",
-                    backgroundColor: Theme
-                        .of(context)
-                        .primaryColor),
+                    label: AppLocalizations.of(context)!.quran,
+                    backgroundColor: Theme.of(context).primaryColor),
+                BottomNavigationBarItem(
+                    icon:
+                        ImageIcon(AssetImage("assets/images/icon_hadeth.png")),
+                    label: AppLocalizations.of(context)!.ahadeth,
+                    backgroundColor: Theme.of(context).primaryColor),
                 BottomNavigationBarItem(
                     icon: ImageIcon(AssetImage("assets/images/icon_sebha.png")),
-                    label: "Sebha",
-                    backgroundColor: Theme
-                        .of(context)
-                        .primaryColor),
+                    label: AppLocalizations.of(context)!.sebha,
+                    backgroundColor: Theme.of(context).primaryColor),
                 BottomNavigationBarItem(
                     icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
-                    label: "Radio",
-                    backgroundColor: Theme
-                        .of(context)
-                        .primaryColor),
+                    label: AppLocalizations.of(context)!.redio,
+                    backgroundColor: Theme.of(context).primaryColor),
               ]
           ),
           appBar: AppBar(
-            title: Text('islami', style: Theme
-                .of(context)
-                .textTheme
-                .titleSmall
-              //style: ,
+            title: Text(AppLocalizations.of(context)!.suraName,
+                style: Theme.of(context).textTheme.titleSmall
+                //style: ,
 
-            ),
+                ),
           ),
           body: tabs[index],
 

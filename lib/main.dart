@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami/mythem.dart';
 import 'package:islami/sura_content.dart';
 import 'package:islami/ui/home/Home_Screen.dart';
@@ -16,12 +17,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        title: 'Localizations Sample App',
+        localizationsDelegates: [
+          AppLocalizations.delegate, // Add this line
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        locale: Locale("ar"),
+        supportedLocales: [
+          Locale('en'), // English
+          Locale('es'), // Spanish
+        ],
         debugShowCheckedModeBanner: false,
-
         themeMode: ThemeMode.light,
         theme: myThemData.lightThem,
         darkTheme: myThemData.darkThem,
-
         initialRoute: SplashScreen.routeName,
         routes: {
           SplashScreen.routeName: (context) => SplashScreen(),

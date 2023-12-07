@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 class myThemData {
   static const Color lightColor = Color(0xFFB7935F);
   static ThemeData lightThem = ThemeData(
-
       scaffoldBackgroundColor: Colors.transparent,
       primaryColor: lightColor,
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
