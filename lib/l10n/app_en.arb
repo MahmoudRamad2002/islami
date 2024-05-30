@@ -1,8 +1,13 @@
 {
-  "appTitle": "Islami",
-  "suraName": "Sura Name",
+  "islamiTitle": "Islami",
+  "quran": "Quran",
+  "tsbeh": "Tsbeh",
+  "radio": "Radio",
+  "settings": "Setting",
   "ahadeth": "Ahadeth",
-  "sebha": "Sebha",
-  "redio": "Redio",
-  "quran": "Quran"
+  "sebha_counter": "Tsbeh Counter",
+  "language": "Language",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark"
 }

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:islami/sura_content.dart';
-import 'package:islami/sura_model.dart';
-class quranTab extends StatelessWidget {
+import 'package:islami/styel/color_app.dart';
+import 'package:islami/ui/tabs/quran/quran_sura_item.dart';
 
-  List<String>suraName = [
+class QuranScreen extends StatelessWidget {
+  List<String> name = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
@@ -16,8 +14,7 @@ class quranTab extends StatelessWidget {
     "الأنفال",
     "التوبة",
     "يونس",
-    "هود"
-    ,
+    "هود",
     "يوسف",
     "الرعد",
     "إبراهيم",
@@ -29,8 +26,7 @@ class quranTab extends StatelessWidget {
     "طه",
     "الأنبياء",
     "الحج",
-    "المؤمنون"
-    ,
+    "المؤمنون",
     "النّور",
     "الفرقان",
     "الشعراء",
@@ -41,8 +37,7 @@ class quranTab extends StatelessWidget {
     "لقمان",
     "السجدة",
     "الأحزاب",
-    "سبأ"
-    ,
+    "سبأ",
     "فاطر",
     "يس",
     "الصافات",
@@ -54,8 +49,7 @@ class quranTab extends StatelessWidget {
     "الزخرف",
     "الدّخان",
     "الجاثية",
-    "الأحقاف"
-    ,
+    "الأحقاف",
     "محمد",
     "الفتح",
     "الحجرات",
@@ -67,8 +61,7 @@ class quranTab extends StatelessWidget {
     "الرحمن",
     "الواقعة",
     "الحديد",
-    "المجادلة"
-    ,
+    "المجادلة",
     "الحشر",
     "الممتحنة",
     "الصف",
@@ -80,8 +73,7 @@ class quranTab extends StatelessWidget {
     "الملك",
     "القلم",
     "الحاقة",
-    "المعارج"
-    ,
+    "المعارج",
     "نوح",
     "الجن",
     "المزّمّل",
@@ -93,8 +85,7 @@ class quranTab extends StatelessWidget {
     "النازعات",
     "عبس",
     "التكوير",
-    "الإنفطار"
-    ,
+    "الإنفطار",
     "المطفّفين",
     "الإنشقاق",
     "البروج",
@@ -131,44 +122,25 @@ class quranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(children: [
-        Image.asset("assets/images/qur2an_screen_logo.png"),
-        Divider(thickness: 2,
-          color: Theme
-              .of(context)
-              .primaryColor,),
-        Text(
-            AppLocalizations.of(context)!.quran,
-            style: GoogleFonts.elMessiri(
-                fontSize: 25, fontWeight: FontWeight.w500),
-          ),
-        Divider(thickness: 2,
-          color: Theme
-              .of(context)
-              .primaryColor,),
+    return Column(
+      children: [
+        Center(child: Image.asset('assets/images/header_quran_bg.png')),
         Expanded(
           child: ListView.separated(
-            separatorBuilder: (context, index) =>
-                Divider(
-                  thickness: 1,
-                  endIndent: 35,
-                  indent: 35,
-                  color: Theme
-                      .of(context)
-                      .primaryColor,
-                ),
-            itemBuilder: (context, index) {
-              return InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, SuraContent.routeName,
-                        arguments: SuraModel(index, suraName[index]));
-                  },
-                  child: Center(child: Text(suraName[index],
-                    style: GoogleFonts.quicksand(fontSize: 25),)));
-            }, itemCount: suraName.length,),
+            separatorBuilder: (_, index) {
+              return Container(
+                height: 1,
+                margin: EdgeInsets.symmetric(horizontal: 50),
+                color: colorApp.primaryColor,
+              );
+            },
+            itemBuilder: (_, index) {
+              return QuranSuraItem('${name[index]}', index);
+            },
+            itemCount: name.length,
+          ),
         )
-      ],),
+      ],
     );
   }
 }

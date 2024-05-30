@@ -1,8 +1,13 @@
 {
-  "appTitle": "اسلامي",
-  "suraName": "اسم السور",
-  "ahadeth": "الاحاديث",
-  "sebha": "سبحه",
-  "redio": "الراديو",
-  "quran": "قرأن"
+  "islamiTitle": "اسلامي",
+  "quran": "قران",
+  "tsbeh": "تسبيح",
+  "radio": "راديو",
+  "settings": "اعدادات",
+  "ahadeth": "احاديث",
+  "sebha_counter": "عدد التسبيحات",
+  "language": "اللغة",
+  "theme": "الثيم",
+  "light": "فاتح",
+  "dark": "داكن"
 }
